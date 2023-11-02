@@ -97,7 +97,7 @@ Product.init({
   }, {
     sequelize: db,
     modelName: 'Order',
-    tableName: 'Orders',
+    // tableName: 'Orders',
     timestamps: false
   });
   
@@ -124,7 +124,7 @@ Product.init({
   }, {
     sequelize: db,
     modelName: 'OrderDetail',
-    tableName: 'OrderDetails',
+    // tableName: 'OrderDetails',
     timestamps: false
   });
 
@@ -154,7 +154,7 @@ Product.init({
   }, {
     sequelize: db,
     modelName: 'Review',
-    tableName: 'Reviews',
+    // tableName: 'Reviews',
     timestamps: false
   });
   

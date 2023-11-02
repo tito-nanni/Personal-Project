@@ -36,6 +36,71 @@ console.log('Seeding Products table...');
 
   console.log('Finished seeding Products table.');
 
+  console.log('Seeding Orders table...');
+
+  const usersInDb = await User.findAll();
+
+  const orders = usersInDb.map((user, index) => ({
+    user_id: user.user_id,
+    total_price: lodash.random(50, 200, true),
+    order_date: new Date()
+  }));
+
+  await Order.bulkCreate(orders);
+
+  console.log('Finished seeding Orders table');
+
+  console.log('Seeding OrderDetails table...');
+
+  const ordersInDb = await Order.findAll();
+  const productsInDb = await Product.findAll();
+
+  const orderDetails = [];
+
+  ordersInDb.forEach((order) => {
+
+    const numProducts = lodash.random(1, 3);
+    const selectedProducts = lodash.sampleSize(productsInDb, numProducts);
+
+    selectedProducts.forEach((product) => {
+        orderDetails.push({
+            order_id: order.order_id,
+            product_id: product.product_id,
+            quantity: lodash.random(1, 5),
+            price: product.price
+        })
+    })
+  })
+
+  await OrderDetail.bulkCreate(orderDetails);
+
+  console.log('Finished seeding OrderDetails table.');
+
+  console.log('Seeding Reviews table...');
+
+  const reviews = [];
+
+  const numberOfReviews = 20;
+
+  for (let i = 0; i < numberOfReviews; i++) {
+
+    const user = lodash.sample(usersInDb);
+    const product = lodash.sample(productsInDb);
+
+    const review = {
+        user_id: user.user_id,
+        product_id: product.product_id,
+        rating: lodash.random(1, 5),
+        comment: `This is a review for the ${product.name}.`,
+        review_date: new Date()
+    };
+
+    reviews.push(review);
+  }
+
+  await Review.bulkCreate(reviews);
+
+  console.log('Finished seeding Reviews table');
 }
 
 seed().catch(console.error);

@@ -1,13 +1,17 @@
 import { Express } from "express";
+import { db } from "../src/model";
 
 const app = express();
 
 const PORT = 5173;
 
-app.get('/', (req, res) => {
-    res.send('Server is running Correctly!')
-});
+app.use(express.json());
 
-app.listen(PORT, () => {
-console.log(`Server is running on http://localhost:${PORT}`);
-})
+// Define routes for your resources
+
+
+db.sync().then(() => {
+    app.listen(PORT, () => {
+        console.log(`Server is running on http://localhost:${PORT}`);
+});
+}).catch(console.error);
