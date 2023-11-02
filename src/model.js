@@ -2,7 +2,7 @@ import { DataTypes, Model } from 'sequelize';
 import util from 'util'; 
 import connectToDB from './db.js';  
 
-export const db = await connectToDB('postgresql:///project_db');  //put your database here
+export const db = await connectToDB('postgresql:///project-db');
 
 export class User extends Model {   
 [util.inspect.custom]() {     
@@ -30,7 +30,6 @@ User.init({
 },{
     sequelize: db,
     modelName: 'User', //Choose the model name here
-    tableName: 'Users', //define table name here
     timestamps: false //assuming you dont want sequelize to automatically manage createdAt and updatedAt timestamps
 });
 
@@ -71,7 +70,7 @@ Product.init({
   }, {
     sequelize: db,
     modelName: 'Product',
-    tableName: 'Products',
+    // tableName: 'Products',
     timestamps: false
   });
 
