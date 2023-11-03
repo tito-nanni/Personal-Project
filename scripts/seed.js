@@ -1,5 +1,5 @@
 import lodash from 'lodash';
-import { User, Product, Order, OrderDetail, Review, db } from '../src/model.js';
+import { User, Product, Order, OrderDetail, Review, db } from '../server/model.js';
 
 async function seed() {
 console.log('Syncing database...');
