@@ -88,7 +88,8 @@ Product.init({
     },
     total_price: {
       type: DataTypes.DECIMAL(10, 2),
-      allowNull: false
+      allowNull: false,
+      defaultValue: 0.00
     },
     order_date: {
       type: DataTypes.DATE,
