@@ -1,4 +1,5 @@
 import { User } from '../model.js';
+import bcrypt from 'bcrypt';
 
 // Fetch all users
 export const getUsers = async (req, res) => {
@@ -65,3 +66,18 @@ export const deleteUser = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 }
+
+// create a new user with hashed password
+export async function createUser(req, res) {
+    try {
+      const { email, password } = req.body;
+      const hashedPassword = await bcrypt.hash(password, 10); // 10 rounds of salting
+      const user = await User.create({
+        email: email,
+        password: hashedPassword,
+      });
+      res.status(201).json(user);
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  }

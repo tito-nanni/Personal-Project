@@ -17,6 +17,7 @@
     "bcrypt": "^5.1.1",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
+    "jsonwebtoken": "^9.0.2",
     "lodash": "^4.17.21",
     "morgan": "^1.10.0",
     "node.js": "^0.0.1-security",
