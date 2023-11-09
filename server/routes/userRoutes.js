@@ -14,9 +14,9 @@ router.delete('/users/:userId', userController.deleteUser);
 //login route
 router.post('/login', async (req, res) => {
     const { email, password } = req.body;
-    const user = await User.findOne({ where: { email } });
-  
-    if (user && bcrypt.compareSync(password, user.password)) {
+    const user = await User.findOne({ where: { email: email } });
+
+    if (user && user.password === password) {
       req.session.userId = user.user_id;  // Store user id in session
       res.json({ message: 'Logged in successfully' });
     } else {
