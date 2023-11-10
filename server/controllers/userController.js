@@ -16,7 +16,7 @@ export const getUserById = async (req, res) => {
     try {
         const user = await User.findByPk(req.params.userId);
         if (user) {
-            res.json();
+            res.json(user);
         } else {
             res.status(404).json({ error: 'User not found'});
         }
@@ -26,7 +26,7 @@ export const getUserById = async (req, res) => {
 }
 
 // Create a new user
-export const createdUser = async (req, res) => {
+export const createUser = async (req, res) => {
     try {
         const user = await User.create(req.body);
         res.status(201).json(user);
@@ -66,18 +66,3 @@ export const deleteUser = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 }
-
-// create a new user with hashed password
-export async function createUser(req, res) {
-    try {
-      const { email, password } = req.body;
-      const hashedPassword = await bcrypt.hash(password, 10); // 10 rounds of salting
-      const user = await User.create({
-        email: email,
-        password: hashedPassword,
-      });
-      res.status(201).json(user);
-    } catch (error) {
-      res.status(500).json({ error: error.message });
-    }
-  }

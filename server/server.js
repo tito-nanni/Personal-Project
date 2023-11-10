@@ -2,14 +2,12 @@ import express from 'express';
 import ViteExpress from 'vite-express';
 import session from 'express-session';
 import morgan from 'morgan';
-import bcrypt from 'bcrypt';
 import { db } from './model.js';
 import productRoutes from './routes/productRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import orderRoutes from './routes/orderRoutes.js';
 import orderDetailRoutes from './routes/orderDetailRoutes.js';
 import reviewRoutes from './routes/reviewRoutes.js';
-import { User } from './model.js';
 
 
 const app = express();

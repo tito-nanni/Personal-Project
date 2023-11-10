@@ -1,7 +1,6 @@
 import { DataTypes, Model } from 'sequelize'; 
 import util from 'util'; 
-import connectToDB from './db.js';
-import bcrypt from 'bcrypt'  
+import connectToDB from './db.js';  
 
 export const db = await connectToDB('postgresql:///project-db');
 
