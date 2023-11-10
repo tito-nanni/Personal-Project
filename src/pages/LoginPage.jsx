@@ -2,21 +2,24 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-function LoginPage() {
+function LoginPage({setIsAuthenticated}) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const [loginError, setLoginError] = useState('')
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setLoginError('')
     try {
       const response = await axios.post('/api/login', { email, password });
-      if (response.data) {
-        // Redirect to homepage
+      if (response.data.message === 'Logged in successfully') {
+        setIsAuthenticated(true);
         navigate('/');
       }
     } catch (error) {
-      console.error('Login failed:', error.response.data.error);
+      setLoginError('Login failed. Please check your credentials')
+      console.error('Login failed:', error);
     }
   };
 
@@ -33,6 +36,7 @@ function LoginPage() {
             </label>
             <button type="submit">Login</button>
           </form>
+          {loginError && <p>{loginError}</p>}
         </div>
       );
     };

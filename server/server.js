@@ -9,12 +9,14 @@ import orderRoutes from './routes/orderRoutes.js';
 import orderDetailRoutes from './routes/orderDetailRoutes.js';
 import reviewRoutes from './routes/reviewRoutes.js';
 
-
 const app = express();
 const PORT = 5173;
+ViteExpress.config({ printViteDevServerHost: false });
 
-app.use(express.json()); //Middleware to parse JSON requests
+
 app.use(morgan('dev'));
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json()); //Middleware to parse JSON requests
 app.use(session({ 
     secret: 'your_secret_key',
     resave: false,

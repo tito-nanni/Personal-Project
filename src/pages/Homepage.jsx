@@ -3,13 +3,13 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './Homepage.css';
 
-function Homepage() {
+function HomePage({setIsAuthenticated}) {
     const navigate = useNavigate();
 
     const handleLogout = async () => {
         try {
             await axios.post('/api/logout');
-            // If the logout was successful, navigate to the login page
+            setIsAuthenticated(false)
             navigate('/login');
         } catch (error) {
             console.error('Logout failed:', error);
@@ -25,4 +25,4 @@ function Homepage() {
     );
 }
 
-export default Homepage;
+export default HomePage;
