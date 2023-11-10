@@ -35,6 +35,9 @@ function LoginPage({setIsAuthenticated}) {
               <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
             </label>
             <button type="submit">Login</button>
+            <p>
+              Don't have an account? <a href="/register">Sign up here</a>
+            </p>
           </form>
           {loginError && <p>{loginError}</p>}
         </div>

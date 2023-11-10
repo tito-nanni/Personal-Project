@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ProtectedRoute from './components/ProtectedRoute';
 import LoginPage from './pages/LoginPage';
 import HomePage from './pages/Homepage';
+import RegisterPage from './pages/RegisterPage';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -11,6 +12,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<LoginPage setIsAuthenticated={setIsAuthenticated} />} />
+        <Route path="/register" element={<RegisterPage />} /> 
         <Route 
           path="/" 
           element={
