@@ -62,7 +62,7 @@ Product.init({
       defaultValue: 0
     },
     image_url: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       validate: {
         isURL: true
       }
