@@ -1,3 +1,16 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .home-content {
+    flex: 1;
+    /* Your styles for main content */
+  }
+
+
+
 .logout-button {
     position: absolute;
     bottom: 10px;
