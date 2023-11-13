@@ -2,14 +2,15 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: #BBC4C9
   }
   
   .home-content {
     flex: 1;
-    /* Your styles for main content */
+    background-color: #BBC4C9;
+
+    /* styles for main content */
   }
-
-
 
 .logout-button {
     position: absolute;

@@ -2,8 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Navigation from '../components/Navigation';
-import Header from '../components/Header'; // Import Header
-import Footer from '../components/Footer'; // Import Footer
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 import './Homepage.css';
 
 function HomePage({ setIsAuthenticated }) {
@@ -21,13 +21,13 @@ function HomePage({ setIsAuthenticated }) {
 
   return (
     <div className="home-container">
-      <Header /> {/* Render Header */}
+      <Header /> {/* Render the header */}
       <Navigation setIsAuthenticated={setIsAuthenticated} />
       <main className="home-content">
         <h1></h1>
         <button className="logout-button" onClick={handleLogout}>Log Out</button>
       </main>
-      <Footer /> {/* Render Footer */}
+      <Footer /> {/* Render the footer */}
     </div>
   );
 }

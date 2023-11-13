@@ -6,6 +6,7 @@ import LoginPage from './pages/LoginPage';
 import HomePage from './pages/Homepage';
 import RegisterPage from './pages/RegisterPage';
 import ProductsList from './pages/ProductsList';
+import Cart from './pages/Cart';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -14,8 +15,7 @@ function App() {
     <BrowserRouter>
      {/* Conditionally render Navigation only if authenticated */}
      {isAuthenticated && <Navigation isAuthenticated={isAuthenticated} />}
-
-<Routes>
+  <Routes>
   <Route path="/login" element={<LoginPage setIsAuthenticated={setIsAuthenticated} />} />
   <Route path="/register" element={<RegisterPage />} />
   <Route
@@ -34,7 +34,15 @@ function App() {
       </ProtectedRoute>
     }
   />
-  {/* You can add more protected routes here */}
+  {/* you can add more protected routes here */}
+  <Route
+  path="/cart"
+  element={
+    <ProtectedRoute isAuthenticated={isAuthenticated}>
+      <Cart />
+    </ProtectedRoute>
+  }
+  />
 </Routes>
 </BrowserRouter>
 );
