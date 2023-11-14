@@ -9,6 +9,8 @@ const Navigation = ({ isAuthenticated }) => {
         <>
           <Link to="/">Home</Link>
           <Link to="/products">Products</Link>
+          <Link to="/orders">My Orders</Link>
+          <Link to="/orders/:orderId">Order Details</Link>
           <Link to="/cart">Cart</Link>
           {/* Add more authenticated links here */}
         </>

@@ -7,6 +7,9 @@ import HomePage from './pages/Homepage';
 import RegisterPage from './pages/RegisterPage';
 import ProductsList from './pages/ProductsList';
 import Cart from './pages/Cart';
+import OrdersPage from './pages/OrdersPage';
+import OrderDetailsPage from './pages/OrderDetailsPage';
+import OrderSuccessPage from './pages/OrderSuccessPage';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -40,6 +43,30 @@ function App() {
   element={
     <ProtectedRoute isAuthenticated={isAuthenticated}>
       <Cart />
+    </ProtectedRoute>
+  }
+  />
+  <Route
+  path="/orders"
+  element={
+    <ProtectedRoute isAuthenticated={isAuthenticated}>
+      <OrdersPage />
+    </ProtectedRoute>
+  }
+  />
+  <Route
+  path="/orders/:orderId"
+  element={
+    <ProtectedRoute isAuthenticated={isAuthenticated}>
+      <OrderDetailsPage />
+    </ProtectedRoute>
+  }
+  />
+   <Route
+  path="/order-success"
+  element={
+    <ProtectedRoute isAuthenticated={isAuthenticated}>
+      <OrderSuccessPage />
     </ProtectedRoute>
   }
   />
