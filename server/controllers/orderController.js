@@ -1,32 +1,38 @@
-import { Order, OrderDetail } from '../model.js';
+import { Order, OrderDetail, Product } from '../model.js';
 
 // Fetch all orders
 export const getOrders = async (req, res) => {
     try {
         const orders = await Order.findAll({
-            include: [OrderDetail] // Includes related OrderDetails
+            include: [{
+                model: OrderDetail,
+                include: [Product] // Include the Product information within each OrderDetail
+            }]
         });
         res.json(orders);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
-}
+};
 
 // Fetch a single order by ID
 export const getOrderById = async (req, res) => {
     try {
         const order = await Order.findByPk(req.params.orderId, {
-            include: [OrderDetail]
-        })
+            include: [{
+                model: OrderDetail,
+                include: [Product] // Include the Product information within each OrderDetail
+            }]
+        });
         if (order) {
             res.json(order);
         } else {
-            res.status(404).json({ error: 'Order not found' })
+            res.status(404).json({ error: 'Order not found' });
         }
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
-}
+};
 
 // Create a new order
 export const createOrder = async (req, res) => {

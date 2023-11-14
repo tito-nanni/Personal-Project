@@ -27,8 +27,12 @@ const OrdersPage = () => {
           <h3>Items:</h3>
           <ul>
             {order.OrderDetails.map(detail => (
+              
               <li key={detail.order_detail_id}>
-                Product ID: {detail.product_id}, Quantity: {detail.quantity}, Price: ${detail.price}
+                {/* now displaying the product name instead of the product ID */}
+                Product: {detail.Product.name}, 
+                Quantity: {detail.quantity}, 
+                Price: ${parseFloat(detail.price).toFixed(2)}
               </li>
             ))}
           </ul>

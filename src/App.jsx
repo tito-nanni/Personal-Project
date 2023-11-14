@@ -55,7 +55,7 @@ function App() {
   }
   />
   <Route
-  path="/orders/:orderId"
+  path="/order-details"
   element={
     <ProtectedRoute isAuthenticated={isAuthenticated}>
       <OrderDetailsPage />

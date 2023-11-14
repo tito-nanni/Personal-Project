@@ -4,33 +4,32 @@ import { useParams } from 'react-router-dom';
 
 const OrderDetailsPage = () => {
   const [orderDetails, setOrderDetails] = useState([]);
-  const { orderId } = useParams(); // If you have a route param to fetch a specific order's details
+  const { orderDetailId } = useParams(); // If you have a route param to fetch a specific order detail
 
   useEffect(() => {
     const fetchOrderDetails = async () => {
       try {
-        // Assuming you need to fetch details for a specific order
-        const response = await axios.get(`/api/order-details?order_id=${orderId}`);
+        const response = await axios.get(`/api/order-details`);
         setOrderDetails(response.data);
       } catch (error) {
         console.error('Error fetching order details', error);
+        setOrderDetails([]); // Set to an empty array on error
       }
     };
 
     fetchOrderDetails();
-  }, [orderId]);
+  }, []); // No need to include orderDetailId in the dependency array
 
   return (
     <div>
-      <h1>Details for Order #{orderId}</h1>
+      <h1>Order Details</h1>
       {orderDetails.length > 0 ? (
-        orderDetails.map((detail) => (
-          <div key={detail.order_detail_id}>
-            <h2>Product ID: {detail.product_id}</h2>
-            <p>Quantity: {detail.quantity}</p>
-            <p>Price per item: ${detail.price}</p>
-            <p>Subtotal: ${(detail.quantity * parseFloat(detail.price)).toFixed(2)}</p>
-            {/* Add any additional details wanted to display */}
+        orderDetails.map((orderDetail) => (
+          <div key={orderDetail.order_detail_id}>
+            <h2>Product Name: {orderDetail.Product?.name}</h2>
+            <p>Quantity: {orderDetail.quantity}</p>
+            <p>Price per item: ${orderDetail.price}</p>
+            <p>Subtotal: ${(orderDetail.quantity * parseFloat(orderDetail.price)).toFixed(2)}</p>
           </div>
         ))
       ) : (
