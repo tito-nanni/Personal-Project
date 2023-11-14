@@ -86,11 +86,6 @@ Product.init({
       primaryKey: true,
       autoIncrement: true
     },
-    total_price: {
-      type: DataTypes.DECIMAL(10, 2),
-      allowNull: false,
-      defaultValue: 0.00
-    },
     order_date: {
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW

@@ -23,7 +23,6 @@ const OrdersPage = () => {
       {orders.map(order => (
         <div key={order.order_id}>
           <h2>Order {order.order_id}</h2>
-          <p>Total Price: ${order.total_price}</p>
           <p>Order Date: {new Date(order.order_date).toLocaleDateString()}</p>
           <h3>Items:</h3>
           <ul>

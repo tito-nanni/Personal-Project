@@ -30,7 +30,7 @@ const OrderDetailsPage = () => {
             <p>Quantity: {detail.quantity}</p>
             <p>Price per item: ${detail.price}</p>
             <p>Subtotal: ${(detail.quantity * parseFloat(detail.price)).toFixed(2)}</p>
-            {/* Add any additional details you want to display */}
+            {/* Add any additional details wanted to display */}
           </div>
         ))
       ) : (

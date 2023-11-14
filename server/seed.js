@@ -42,7 +42,6 @@ console.log('Seeding Products table...');
 
   const orders = usersInDb.map((user, index) => ({
     user_id: user.user_id,
-    total_price: lodash.random(50, 200, true),
     order_date: new Date()
   }));
 
