@@ -17,8 +17,6 @@ const Navigation = ({ isAuthenticated }) => {
       ) : (
         // Links to show when no user is authenticated
         <>
-          <Link to="/login">Login</Link>
-          <Link to="/register">Register</Link>
           {/* Add more non-authenticated links here */}
         </>
       )}
