@@ -7,12 +7,12 @@ const ReviewForm = ({ productId, onNewReview }) => {
         comment: ''
     });
     const [submitError, setSubmitError] = useState('')
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
-        //resetting any existing error messages
-        setSubmitError('')
+        setSubmitError('');
+        setIsSubmitted(false); //reset submission status on new submission attempt
 
         //validation example
         if (!reviewData.rating || !reviewData.comment) {
@@ -29,9 +29,8 @@ const ReviewForm = ({ productId, onNewReview }) => {
 
             //invoke the callback to update the review list on the product page
             onNewReview(response.data);
-
-            //clear the form data
-            setReviewData({ rating: '', comment: ''});
+            setReviewData({ rating: '', comment: ''}); //clear form data
+            setIsSubmitted(true); //set submission status to true on successful submission
         } catch (error) {
             console.error('error submitting review:', error.response?.data?.error || error.message);
             setSubmitError('failed to submit review. please try again')
@@ -46,9 +45,13 @@ const ReviewForm = ({ productId, onNewReview }) => {
         }));
     };
 
+    if (isSubmitted) {
+        return <h3>Thank you for your feedback!</h3>
+    }
+
     return (
         <div>
-            <h3>Write a Review</h3>
+            <h2>Write a Review</h2>
             <form onSubmit={handleSubmit}>
                 <label>
                     Rating:

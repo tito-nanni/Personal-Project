@@ -1,4 +1,3 @@
-// ReviewPage.jsx
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ProductReviews from './ProductReviews';
@@ -29,7 +28,7 @@ const ReviewPage = () => {
     return (
         <div>
             {/* Render the list of reviews */}
-            <h2>Product Reviews</h2>
+            <h1>Product Reviews</h1>
             <ProductReviews reviews={reviews} />
             
             {/* Render the review form and pass the callback */}

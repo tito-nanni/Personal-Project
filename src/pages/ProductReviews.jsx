@@ -21,7 +21,7 @@ const ProductReviews = ({ productId }) => {
         <div>
             {reviews.map(review => (
                 <div key={review.review_id}>
-                    <p>{review.comment} - {review.rating}/5</p>
+                    <p>-{review.comment} - {review.rating}/5</p>
                     </div>
             ))}
         </div>
