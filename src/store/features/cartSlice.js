@@ -20,9 +20,16 @@ export const cartSlice = createSlice({
         clearCart: (state) => {
             state.items = []
         },
+        updateQuantity: (state, action) => {
+            const {id, quantity } = action.payload;
+            const itemIndex = state.items.findIndex(item => item.id === id);
+            if (itemIndex !== -1) {
+                state.items[itemIndex].quantity = Number(quantity) || 2;
+            }
+        },
     },
 });
 
-export const { addToCart, removeFromCart, clearCart } = cartSlice.actions;
+export const { addToCart, removeFromCart, clearCart, updateQuantity } = cartSlice.actions;
 
 export default cartSlice.reducer
