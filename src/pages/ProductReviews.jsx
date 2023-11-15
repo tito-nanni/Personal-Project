@@ -19,10 +19,9 @@ const ProductReviews = ({ productId }) => {
 
     return (
         <div>
-            <h3>Reviews</h3>
             {reviews.map(review => (
                 <div key={review.review_id}>
-                    <p>{review.user_id}: {review.comment} - {review.rating}/5</p>
+                    <p>{review.comment} - {review.rating}/5</p>
                     </div>
             ))}
         </div>

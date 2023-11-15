@@ -12,6 +12,7 @@ const Cart = () => {
 
     return (
         <div className="cart">
+          <h1>Your Cart</h1>
           {cartItems.length > 0 ? (
             cartItems.map(item => (
               <div key={item.id} className="cart-item">
@@ -19,7 +20,7 @@ const Cart = () => {
                 <div className="cart-item-details">
                   <h3 className="cart-item-name">{item.name}</h3>
                   <p className="cart-item-price">${item.price}</p>
-                  <p className="cart-item-quantity">Quantity: {item.quantity}</p>
+                  <p className="cart-item-quantity">Description: {item.description}</p>
                   <button onClick={() => handleRemoveFromCart(item.id)} className="cart-item-remove">
                     Remove
                   </button>

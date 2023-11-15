@@ -25,7 +25,6 @@ const ReviewForm = ({ productId, onNewReview }) => {
                 product_id: productId,
                 rating: Number(reviewData.rating),
                 comment: reviewData.comment,
-                date: reviewData.date,
             });
 
             //invoke the callback to update the review list on the product page
@@ -59,11 +58,11 @@ const ReviewForm = ({ productId, onNewReview }) => {
                     onChange={handleInputChange}
                     >
                         <option value="">Choose a rating</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
+                        <option value="1">1-Terrible</option>
+                        <option value="2">2-Bad</option>
+                        <option value="3">3-Okay</option>
+                        <option value="4">4-Good</option>
+                        <option value="5">5-Great</option>
                     </select>
                 </label>
                 <label>
