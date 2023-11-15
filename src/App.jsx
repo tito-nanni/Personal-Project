@@ -10,6 +10,7 @@ import Cart from './pages/Cart';
 import OrdersPage from './pages/OrdersPage';
 import OrderDetailsPage from './pages/OrderDetailsPage';
 import OrderSuccessPage from './pages/OrderSuccessPage';
+import ReviewPage from './pages/ReviewPage';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -43,6 +44,14 @@ function App() {
   element={
     <ProtectedRoute isAuthenticated={isAuthenticated}>
       <Cart />
+    </ProtectedRoute>
+  }
+  />
+  <Route
+  path="/reviews"
+  element={
+    <ProtectedRoute isAuthenticated={isAuthenticated}>
+      <ReviewPage />
     </ProtectedRoute>
   }
   />

@@ -22,11 +22,11 @@ const OrderDetailsPage = () => {
 
   return (
     <div>
-      <h1>Order Details</h1>
+      <h1>Order History</h1>
       {orderDetails.length > 0 ? (
         orderDetails.map((orderDetail) => (
           <div key={orderDetail.order_detail_id}>
-            <h2>Product Name: {orderDetail.Product?.name}</h2>
+            <h2>Product: {orderDetail.Product?.name}</h2>
             <p>Quantity: {orderDetail.quantity}</p>
             <p>Price per item: ${orderDetail.price}</p>
             <p>Subtotal: ${(orderDetail.quantity * parseFloat(orderDetail.price)).toFixed(2)}</p>

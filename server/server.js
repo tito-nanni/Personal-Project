@@ -2,7 +2,6 @@ import express from 'express';
 import ViteExpress from 'vite-express';
 import session from 'express-session';
 import morgan from 'morgan';
-import { db } from './model.js';
 import productRoutes from './routes/productRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import orderRoutes from './routes/orderRoutes.js';
