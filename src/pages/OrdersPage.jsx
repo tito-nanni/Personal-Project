@@ -4,7 +4,7 @@ import axios from 'axios';
 const OrdersPage = () => {
   const [orders, setOrders] = useState([]);
   const [selectedOrder, setSelectedOrder] = useState(null);
-  const [orderDetails, setOrderDetails] = useState([]);
+  const [orderDetails, setOrderDetails] = useState([null]);
 
   useEffect(() => {
     const fetchOrders = async () => {
@@ -19,15 +19,19 @@ const OrdersPage = () => {
     fetchOrders();
   }, []);
 
-  const handleViewDetails = async(orderId) => {
+  const handleViewDetails = async(orderDetailId) => {
     try {
-      const response = await axios.get(`api/order-details`);
+      const response = await axios.get(`api/order-details/${orderDetailId}`);
+      console.log("Fetched data:", response.data)
       setOrderDetails(response.data);
-      setSelectedOrder(orderId);
+      setSelectedOrder(response.data.order_id);
     } catch (error) {
       console.error('Error fetching order details', error);
     }
   };
+
+  console.log("Selected Order:", selectedOrder)
+  console.log("Order Details:", orderDetails)
 
   return (
     <div>
@@ -40,19 +44,17 @@ const OrdersPage = () => {
           </div>
       ))}
 
-      {selectedOrder && orderDetails.length > 0 && (
+      {selectedOrder && orderDetails && (
         <div>
-          <h2>Order Details for Order {selectedOrder}</h2>
-          {orderDetails.map(detail => (
-            <div key={detail.order_detail_id}>
-              <p>Product: {detail.Product?.name}</p>
-              <p>Quantity: {detail.quantity}</p>
-              <p>Price per item: ${detail.price}</p>
-              <p>Subtotal: ${(detail.quantity * parseFloat(detail.price)).toFixed(2)}</p>
+          <h2>Order Details for Order</h2>
+            <div key={orderDetails.order_detail_id}>
+              <p>Product: {orderDetails.Product?.name}</p>
+              <p>Quantity: {orderDetails.quantity}</p>
+              <p>Price per item: ${orderDetails.price}</p>
+              <p>Subtotal: ${(orderDetails.quantity * parseFloat(orderDetails.price)).toFixed(2)}</p>
               </div>
-          ))}
         </div>
-      )}
+          )}
       </div>
      );
  };

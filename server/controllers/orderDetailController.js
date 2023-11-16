@@ -17,7 +17,10 @@ export const getOrderDetails = async (req, res) => {
 export const getOrderDetailById = async (req, res) => {
     try {
         const orderDetail = await OrderDetail.findByPk(req.params.orderDetailId, {
-            include: [Product]  // Include the Product information
+            include: [{
+             model: Product,
+             attributes: ['name']  // Include the Product information
+            }]
         });
         if (orderDetail) {
             res.json(orderDetail);
