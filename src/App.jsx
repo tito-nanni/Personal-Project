@@ -7,6 +7,7 @@ import HomePage from './pages/Homepage';
 import RegisterPage from './pages/RegisterPage';
 import ProductsList from './pages/ProductsList';
 import Cart from './pages/Cart';
+import CheckoutPage from './pages/CheckoutPage';
 import OrdersPage from './pages/OrdersPage';
 import OrderDetailsPage from './pages/OrderDetailsPage';
 import OrderSuccessPage from './pages/OrderSuccessPage';
@@ -44,6 +45,14 @@ function App() {
   element={
     <ProtectedRoute isAuthenticated={isAuthenticated}>
       <Cart />
+    </ProtectedRoute>
+  }
+  />
+  <Route
+  path="/checkout"
+  element={
+    <ProtectedRoute isAuthenticated={isAuthenticated}>
+      <CheckoutPage />
     </ProtectedRoute>
   }
   />

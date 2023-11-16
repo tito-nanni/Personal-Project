@@ -1,10 +1,12 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart, updateQuantity } from "../store/features/cartSlice";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
     const cartItems = useSelector((state) => state.cart.items);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const handleRemoveFromCart = (id) => {
         dispatch(removeFromCart(id));
@@ -23,11 +25,13 @@ const Cart = () => {
           const price = parseFloat(item.price) || 0; // Parse to float and fallback to 0 if NaN
           const quantity = item.quantity || 1; // Fallback to 0 if undefined or NaN
   
-          console.log(`Calculating item: price = ${price}, quantity = ${quantity}`); // Debug log
-  
           return total + (price * quantity);
       }, 0);
   };
+
+  const handleCheckout = () => {
+    navigate('/checkout'); //navigating to the checkout page
+  }
 
     return (
         <div className="cart">
@@ -55,6 +59,9 @@ const Cart = () => {
             <div className="cart-total">
               <h3>Total Price: ${calculateTotalPrice().toFixed(2)}</h3>
             </div>
+            <button onClick={handleCheckout} className="checkout-button">
+              Proceed to Checkout
+            </button>
             </div>
           ) : (
             <p>Your cart is empty</p>

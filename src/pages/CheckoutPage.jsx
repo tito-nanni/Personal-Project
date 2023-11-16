@@ -9,6 +9,10 @@ const CheckoutPage = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+    const calculateTotalPrice = () => {
+        return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0)
+    }
+
     const handleSubmitOrder = async () => {
         try {
             // create an order object from the cart items
@@ -35,8 +39,12 @@ const CheckoutPage = () => {
     return (
         <div>
             <h1>Checkout</h1>
-            {/* List cart items and total price */}
-            {/* ... */}
+            {cartItems.map(item => (
+                <div key={item.id}>
+                    <p>{item.name} - ${item.price} x {item.quantity}</p>
+                    </div>
+            ))}
+            <p>Total Price: ${calculateTotalPrice().toFixed(2)}</p>
             <button onClick={handleSubmitOrder}>Submit Order</button>
         </div>
     );
