@@ -9,9 +9,9 @@ import ProductsList from './pages/ProductsList';
 import Cart from './pages/Cart';
 import CheckoutPage from './pages/CheckoutPage';
 import OrdersPage from './pages/OrdersPage';
-import OrderDetailsPage from './pages/OrderDetailsPage';
 import OrderSuccessPage from './pages/OrderSuccessPage';
 import ReviewPage from './pages/ReviewPage';
+import ContactPage from './pages/ContactPage';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -65,18 +65,18 @@ function App() {
   }
   />
   <Route
-  path="/orders"
+  path="/contact"
   element={
     <ProtectedRoute isAuthenticated={isAuthenticated}>
-      <OrdersPage />
+      <ContactPage />
     </ProtectedRoute>
   }
   />
   <Route
-  path="/order-details"
+  path="/orders"
   element={
     <ProtectedRoute isAuthenticated={isAuthenticated}>
-      <OrderDetailsPage />
+      <OrdersPage />
     </ProtectedRoute>
   }
   />
