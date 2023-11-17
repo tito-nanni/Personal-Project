@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import './LoginPage.css'
 
 function LoginPage({setIsAuthenticated}) {
   const [email, setEmail] = useState('');
@@ -24,8 +25,8 @@ function LoginPage({setIsAuthenticated}) {
   };
 
   return (
-        <div>
-          <form onSubmit={handleLogin}>
+        <div className="login-container">
+          <form onSubmit={handleLogin} className="login-form">
             <label>
               Email:
               <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -39,7 +40,7 @@ function LoginPage({setIsAuthenticated}) {
               Don't have an account? <a href="/register">Sign up here</a>
             </p>
           </form>
-          {loginError && <p>{loginError}</p>}
+          {loginError && <p className="login-error">{loginError}</p>}
         </div>
       );
     };

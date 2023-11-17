@@ -1,0 +1,17 @@
+/* ProductsList.css */
+
+.products-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .products-title {
+    text-align: center; /* Centers the text */
+    font-size: 4em; /* Makes the font size larger */
+    margin-top: 1rem; /* Adds some space above the title */
+    margin-bottom: 1rem; /* Adds some space below the title */
+    color: #014A53;
+  }
+  

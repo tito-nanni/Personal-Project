@@ -30,6 +30,8 @@ console.log('Seeding Products table...');
     { name: 'Black Hoodie', description: 'Black Eagles Hoodie', price: 49.99, stock_quantity: 30, image_url: `https://fanatics.frgimages.com/philadelphia-eagles/mens-fanatics-branded-black-philadelphia-eagles-logo-team-lockup-fitted-pullover-hoodie_pi5076000_altimages_ff_5076708-f4ecabb8e3ed5a878197alt1_full.jpg?_hv=2&w=900` },
     { name: 'Beanie', description: 'Eagles Beanie', price: 29.99, stock_quantity: 100, image_url: `https://fanatics.frgimages.com/philadelphia-eagles/mens-47-midnight-green-philadelphia-eagles-secondary-basic-cuffed-knit-hat_pi3882000_ff_3882524-0b0370377bcdd85c3f32_full.jpg?_hv=2&w=900` },
     { name: 'Baseball Cap', description: 'Eagles Baseball Cap', price: 25.99, stock_quantity: 100, image_url: `https://fanatics.frgimages.com/philadelphia-eagles/mens-47-midnight-green-philadelphia-eagles-mvp-adjustable-hat_ss5_p-200489347+pv-1+u-ieap2ggraqoqdzy5vtzw+v-qncfhe68kfh6hdvl8iyo.jpg?_hv=2&w=900` },
+    { name: 'Visor', description: 'Black Eagles Visor', price: 20.99, stock_quantity: 100, image_url: `https://images.footballfanatics.com/philadelphia-eagles/mens-new-era-black-philadelphia-eagles-2023-nfl-training-camp-adjustable-visor_ss5_p-200004335+pv-1+u-algreogiwyz8xumxnmyx+v-khjbmnkd1ulkdtd5mlun.jpg?_hv=2` },
+    { name: 'Bucket Hat', description: 'Eagles Bucket Hat', price: 35.99, stock_quantity: 100, image_url: `https://fanatics.frgimages.com/philadelphia-eagles/mens-47-midnight-green-philadelphia-eagles-striped-bucket-hat_pi4840000_altimages_ff_4840880-f2fdd60fd68088ff02b9alt1_full.jpg?_hv=2&w=900` },
   ];
 
   await Product.bulkCreate(products);

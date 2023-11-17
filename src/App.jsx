@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import ProtectedRoute from './components/ProtectedRoute';
 import LoginPage from './pages/LoginPage';
@@ -12,6 +12,7 @@ import OrdersPage from './pages/OrdersPage';
 import OrderSuccessPage from './pages/OrderSuccessPage';
 import ReviewPage from './pages/ReviewPage';
 import ContactPage from './pages/ContactPage';
+import HeaderWrapper from './components/HeaderWrapper';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
 
   return (
     <BrowserRouter>
+    <HeaderWrapper />
       {/* Conditionally render Navigation only if authenticated */}
       {isAuthenticated && <Navigation isAuthenticated={isAuthenticated} />}
       <Routes>
