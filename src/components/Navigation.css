@@ -1,0 +1,21 @@
+/* Navigation.css */
+
+nav {
+    display: flex;
+    align-items: center;
+    background-color: var(--primary-color); /* Use a variable or specific color */
+    padding: 10px 20px;
+  }
+  
+  nav a {
+    color: #014A53;
+    text-decoration: none;
+    margin-right: 104px;
+    font-size: 50px;
+    transition: color 0.3s;
+  }
+  
+  nav a:hover {
+    color: var(--secondary-color); /* Change color on hover */
+  }
+  

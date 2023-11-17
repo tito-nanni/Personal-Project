@@ -1,20 +1,68 @@
-.home-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #BBC4C9
-  }
-  
-  .home-content {
-    flex: 1;
-    background-color: #BBC4C9;
+/* Homepage.css */
 
-    /* styles for main content */
-  }
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.home-content {
+  margin-bottom: 20px;
+}
+
+.featured-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px; /* You can adjust the max width as per your design */
+}
+
+.product-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.product-name {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.product-price {
+  color: #014A53;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
 
 .logout-button {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    cursor: pointer;
+  padding: 10px 20px;
+  background-color:#014A53;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.logout-button:hover {
+  background-color: #014A53;
 }
