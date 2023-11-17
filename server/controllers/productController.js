@@ -3,7 +3,7 @@ import { Product } from "../model.js";
 // Fetch  all products
 export const getProducts = async (req, res) => {
     try {
-        const products = await Product.findAll();
+        let products = await Product.findAll({attributes: {include: [['product_id', 'id']]}});
         res.json(products);
     } catch (error) {
         res.status(500).json({ error: error.message })
