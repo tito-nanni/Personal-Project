@@ -13,7 +13,7 @@ import OrderSuccessPage from './pages/OrderSuccessPage';
 import ReviewPage from './pages/ReviewPage';
 import ContactPage from './pages/ContactPage';
 import HeaderWrapper from './components/HeaderWrapper';
-
+import FooterWrapper from './components/FooterWrapper';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -92,6 +92,7 @@ function App() {
         }
         />
     </Routes>
+    <FooterWrapper isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
   </BrowserRouter>
 );
 }

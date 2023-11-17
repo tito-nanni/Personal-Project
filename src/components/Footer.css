@@ -1,0 +1,11 @@
+/* Footer.css */
+
+.footer {
+    position: fixed; /* Fixed position */
+    right: 0; /* Align to the right */
+    bottom: 0; /* Align to the bottom */
+    color: black; /* Light text color for contrast */
+    padding: 0px; /* Some padding */
+    z-index: -1; /* Lower stack order */
+  }
+  

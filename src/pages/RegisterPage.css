@@ -1,6 +1,6 @@
-/* LoginPage.css */
+/* RegisterPage.css */
 
-.login-container {
+.register-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,8 +8,8 @@
     background-color: #f7f7f7;
   }
   
-  .login-form {
-    padding: 50px;
+  .register-form {
+    padding: 100px;
     max-width: 500px;
     width: 100%;
     margin: auto;
@@ -18,13 +18,12 @@
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   }
   
-  .login-form label {
+  .register-form label {
     display: block;
     margin-bottom: 5px;
   }
   
-  .login-form input[type="email"],
-  .login-form input[type="password"] {
+  .register-form input {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -32,7 +31,7 @@
     border-radius: 5px;
   }
   
-  .login-form button {
+  .register-form button {
     width: 100%;
     padding: 10px;
     border: none;
@@ -43,21 +42,18 @@
     cursor: pointer;
   }
   
-  .login-form button:hover {
-    background-color: #014A53;
+  .register-form button:hover {
+    background-color: #45a049;
   }
   
-  .login-form p {
+  .register-form p {
     text-align: center;
   }
   
-  .login-form a {
-    color: #014A53;
+  .register-form a {
+    color: #4CAF50;
     text-decoration: none;
   }
   
-  .login-error {
-    color: red;
-    text-align: center;
-  }
+  /* Add more styles as per your requirement */
   

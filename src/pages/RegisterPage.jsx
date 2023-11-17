@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
+import './RegisterPage.css'
 
 function RegisterPage() {
     const [formData, setFormData] = useState({
@@ -39,8 +40,8 @@ function RegisterPage() {
     }
 
     return (
-        <div>
-      <form onSubmit={handleRegistration}>
+        <div className="register-container">
+      <form onSubmit={handleRegistration} className="register-form">
         <label>
           Name:
           <input type="text" name="name" value={formData.name} onChange={handleChange} />
