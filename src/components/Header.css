@@ -1,8 +1,6 @@
-/* Header.css */
-
 .header {
   width: 100%;
-  height: 100px; /* Adjust height as needed */
+  height: 100px; 
   background-color: #014A53;
   color: white;
   display: flex;
@@ -25,5 +23,3 @@
   width: auto; /* Maintains the aspect ratio of the logo */
   margin-right: 10px; /* Adds some space between the logo and the next element */
 }
-
-/* Include styles for other elements in your header, like logo or buttons */
