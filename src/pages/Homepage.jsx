@@ -21,13 +21,13 @@ function HomePage({ setIsAuthenticated }) {
 
   return (
     <div className="home-container">
-      <Header /> {/* Render the header */}
+      <Header /> {/* Rendering the header */}
       <Navigation setIsAuthenticated={setIsAuthenticated} />
       <main className="home-content">
         <h1></h1>
         <button className="logout-button" onClick={handleLogout}>Log Out</button>
       </main>
-      <Footer /> {/* Render the footer */}
+      <Footer /> {/* Rendering the footer */}
     </div>
   );
 }

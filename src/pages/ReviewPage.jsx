@@ -27,11 +27,11 @@ const ReviewPage = () => {
 
     return (
         <div>
-            {/* Render the list of reviews */}
+            {/* Rendering the list of reviews */}
             <h1>Product Reviews</h1>
             <ProductReviews reviews={reviews} />
             
-            {/* Render the review form and pass the callback */}
+            {/* Rendering the review form and pass the callback */}
             <ReviewForm onNewReview={onNewReview} />
         </div>
     );

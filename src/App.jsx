@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import ProtectedRoute from './components/ProtectedRoute';
 import LoginPage from './pages/LoginPage';
-import HomePage from './pages/Homepage';
+import HomePage from './pages/HomePage';
 import RegisterPage from './pages/RegisterPage';
 import ProductsList from './pages/ProductsList';
 import Cart from './pages/Cart';
@@ -12,6 +12,7 @@ import OrdersPage from './pages/OrdersPage';
 import OrderSuccessPage from './pages/OrderSuccessPage';
 import ReviewPage from './pages/ReviewPage';
 import ContactPage from './pages/ContactPage';
+
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);

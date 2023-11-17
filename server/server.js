@@ -17,9 +17,9 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json()); //Middleware to parse JSON requests
 app.use(session({ 
-    secret: 'your_secret_key',
+    secret: 'eagles_store_key',
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
 }));
 
 

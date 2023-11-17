@@ -18,7 +18,7 @@ const ContactPage = () => {
         e.preventDefault();
         console.log('Form data:', formData);
         setIsSubmitted(true);
-        // handle form submission(send data to api or email service)
+        // handle form submission(send data to api or email service if possible)
     };
 
     if (isSubmitted) {

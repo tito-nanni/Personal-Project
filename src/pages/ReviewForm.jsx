@@ -14,7 +14,7 @@ const ReviewForm = ({ productId, onNewReview }) => {
         setSubmitError('');
         setIsSubmitted(false); //reset submission status on new submission attempt
 
-        //validation example
+        //validation message
         if (!reviewData.rating || !reviewData.comment) {
             setSubmitError('Please provide both a rating and a comment');
             return;
