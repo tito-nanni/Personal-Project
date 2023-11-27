@@ -8,12 +8,13 @@ const Navigation = ({ isAuthenticated }) => {
       {isAuthenticated ? (
         // Links to show when the user is authenticated
         <>
+          
           <Link to="/">Home</Link>
           <Link to="/products">Products</Link>
           <Link to="/cart">Cart</Link>
           <Link to="/reviews">Reviews</Link>
-          <Link to="/orders">My Orders</Link>
-          <Link to="/contact">Contact Us</Link>
+          <Link to="/orders">Orders</Link>
+          <Link to="/contact">Contact</Link>
         </>
       ) : (
         // Links to show when no user is authenticated

@@ -20,6 +20,6 @@
 
 .logo {
   height: 100px; 
-  width: auto; /* Maintains the aspect ratio of the logo */
-  margin-right: 10px; /* Adds some space between the logo and the next element */
+  width: auto;
+  margin-right: 10px; 
 }

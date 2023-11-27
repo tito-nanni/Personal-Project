@@ -93,10 +93,9 @@
   }
   
   .checkout-button:hover {
-    background-color: #45a049;
+    background-color: #4CBB17;
   }
   
-  /* Style for the empty cart message */
   .cart-empty-message {
     text-align: center;
     font-style: italic;

@@ -1,6 +1,7 @@
 nav {
     display: flex;
     align-items: center;
+    justify-content: center;
     background-color: var(--primary-color); /* Use a variable or specific color */
     padding: 10px 20px;
   }

@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { clearCart } from "../store/features/cartSlice";
+import './CheckoutPage.css'
 
 const CheckoutPage = () => {
     const cartItems = useSelector((state) => state.cart.items);
@@ -19,7 +20,7 @@ const CheckoutPage = () => {
             const orderDetails = cartItems.map(item => ({
                 product_id: item.id,
                 quantity: item.quantity,
-                price: item.price // Assuming your backend needs this. Otherwise, the backend should calculate it.
+                price: item.price 
             }));
     
             // Create the order payload
@@ -44,15 +45,15 @@ const CheckoutPage = () => {
     
 
     return (
-        <div>
-            <h1>Checkout</h1>
+        <div className="checkout-container">
+            <h1 className="checkout-header">Checkout</h1>
             {cartItems.map(item => (
-                <div key={item.id}>
+                <div key={item.id} className="checkout-item">
                     <p>{item.name} - ${item.price} x {item.quantity}</p>
                     </div>
             ))}
-            <p>Total Price: ${calculateTotalPrice().toFixed(2)}</p>
-            <button onClick={handleSubmitOrder}>Submit Order</button>
+            <p className="checkout-total">Total Price: ${calculateTotalPrice().toFixed(2)}</p>
+            <button onClick={handleSubmitOrder} className="submit-order-button">Submit Order</button>
         </div>
     );
 };
