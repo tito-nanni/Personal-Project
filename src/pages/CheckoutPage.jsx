@@ -15,26 +15,33 @@ const CheckoutPage = () => {
 
     const handleSubmitOrder = async () => {
         try {
-            // create an order object from the cart items
-            const order = {
-                items: cartItems,
-                //add any additional order info needed by the api
+            // Create an array of order details from the cart items
+            const orderDetails = cartItems.map(item => ({
+                product_id: item.id,
+                quantity: item.quantity,
+                price: item.price // Assuming your backend needs this. Otherwise, the backend should calculate it.
+            }));
+    
+            // Create the order payload
+            const orderPayload = {
+                // Include any other order-level information if needed
+                orderDetails: orderDetails,
             };
-
-            // Post the order to your api
-            const response = await axios.post('/api/orders', order);
-
-            //If the order is successful, clear the cart
+    
+            // Post the order to your API
+            const response = await axios.post('/api/orders', orderPayload);
+    
+            // If the order is successful, clear the cart and navigate to success page
             if (response.status === 201) {
                 dispatch(clearCart());
-                //navigate to a confirmation page or display a success message
-                navigate('/order-success')
+                navigate('/order-success');
             }
         } catch (error) {
             console.error('Failed to submit order', error);
-            //handle errrors, such as displaying a message to the user
+            // Handle errors, such as displaying a message to the user
         }
     };
+    
 
     return (
         <div>
