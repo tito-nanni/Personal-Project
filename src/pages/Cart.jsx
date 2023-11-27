@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart, updateQuantity } from "../store/features/cartSlice";
 import { useNavigate } from "react-router-dom";
+import './Cart.css'
 
 const Cart = () => {
     const cartItems = useSelector((state) => state.cart.items);
@@ -23,7 +24,7 @@ const Cart = () => {
     const calculateTotalPrice = () => {
       return cartItems.reduce((total, item) => {
           const price = parseFloat(item.price) || 0; // Parse to float and fallback to 0 if NaN
-          const quantity = item.quantity || 1; // Fallback to 0 if undefined or NaN
+          const quantity = item.quantity || 0; // Fallback to 0 if undefined or NaN
   
           return total + (price * quantity);
       }, 0);
@@ -64,7 +65,7 @@ const Cart = () => {
             </button>
             </div>
           ) : (
-            <p>Your cart is empty</p>
+            <p className="cart-empty-message">Your cart is empty</p>
           )}
           </div>
     );

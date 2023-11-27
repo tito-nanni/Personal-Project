@@ -12,9 +12,9 @@
 .featured-products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 200px;
+  gap: 220px;
   width: 100%;
-  max-width: 1200px; /* You can adjust the max width as per your design */
+  max-width: 1200px;
 }
 
 .product-card {
