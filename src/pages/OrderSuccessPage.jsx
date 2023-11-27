@@ -1,11 +1,13 @@
 import React from "react";
+import {Link} from "react-router-dom";
+import './OrderSuccessPage.css'
 
 const OrderSuccessPage = () => {
     return (
-        <div>
+        <div className="success-container">
             <h1>Order Placed Successfully</h1>
             <p>Your order has been placed and is being processed. Thank you for shopping with us!</p>
-            {/* additional order confirmation details if you want to add it here */}
+            <Link to="/products" className="continue-shopping">Continue Shopping</Link>
         </div>
     );
 };
