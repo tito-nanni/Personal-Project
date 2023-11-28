@@ -81,7 +81,7 @@ console.log('Seeding Products table...');
 
   const reviews = [];
 
-  const numberOfReviews = 15;
+  const numberOfReviews = 5;
 
   for (let i = 0; i < numberOfReviews; i++) {
 

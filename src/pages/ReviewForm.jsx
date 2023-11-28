@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import axios from "axios";
+import './ReviewForm.css'
 
 const ReviewForm = ({ productId, onNewReview }) => {
     const [reviewData, setReviewData] = useState({
@@ -50,9 +51,9 @@ const ReviewForm = ({ productId, onNewReview }) => {
     }
 
     return (
-        <div>
+        <div className="review-form-container">
             <h2>Write a Review</h2>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="review-form">
                 <label>
                     Rating:
                     <select

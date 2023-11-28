@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ProductReviews from './ProductReviews';
 import ReviewForm from './ReviewForm';
+import './ReviewPage.css'
 
 const ReviewPage = () => {
     const [reviews, setReviews] = useState([]);
@@ -26,7 +27,7 @@ const ReviewPage = () => {
     };
 
     return (
-        <div>
+        <div className="review-page-container">
             {/* Rendering the list of reviews */}
             <h1>Product Reviews</h1>
             <ProductReviews reviews={reviews} />

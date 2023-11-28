@@ -1,0 +1,14 @@
+
+.review-page-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.review-page-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 40px;
+    color:#014A53;
+    
+}
