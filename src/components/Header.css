@@ -10,16 +10,22 @@
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.header h1 {
+.welcome-head {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 370px;
-  font-size: 70px;
+  margin: 150px;
+  font-size: 75px;
 }
 
 .logo {
   height: 100px; 
   width: auto;
   margin-right: 10px; 
+}
+
+.logo-2 {
+  height: 100px;
+  width: auto;
+  margin-left: 10px;
 }
