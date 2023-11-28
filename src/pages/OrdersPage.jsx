@@ -40,31 +40,31 @@ const OrdersPage = () => {
 
   return (
     <div className="orders-container">
-    <h1>Your Orders</h1>
-    {orders.map(order => (
-      <div key={order.order_id} className="order-item">
-        <h2>Order {order.order_id}</h2>
-        <p>Order Date: {new Date(order.order_date).toLocaleDateString()}</p>
-        <button onClick={() => handleViewDetails(order.order_id)} className="order-button">
-          {selectedOrder === order.order_id ? 'Hide Details' : 'View Details'}
-        </button>
-      </div>
-    ))}
-
-
-      {selectedOrder && orderDetails && (
-        <div className="order-details">
-          <h2>Order Details</h2>
-            <div key={orderDetails.order_detail_id}>
-              <p>Product: {orderDetails.Product?.name}</p>
-              <p>Quantity: {orderDetails.quantity}</p>
-              <p>Price per item: ${orderDetails.price}</p>
-              <p>Subtotal: ${(orderDetails.quantity * parseFloat(orderDetails.price)).toFixed(2)}</p>
+      <h1>Your Orders</h1>
+      {orders.map(order => (
+        <div key={order.order_id} className="order-item">
+          <div className="order-summary">
+            <h2>Order {order.order_id}</h2>
+            <p>Order Date: {new Date(order.order_date).toLocaleDateString()}</p>
+            <button onClick={() => handleViewDetails(order.order_id)} className="order-button">
+              {selectedOrder === order.order_id ? 'Hide Details' : 'View Details'}
+            </button>
+          </div>
+          {selectedOrder === order.order_id && orderDetails && (
+            <div className="order-details">
+              <h2>Order Details</h2>
+              <div key={orderDetails.order_detail_id}>
+                <p>Product: {orderDetails.Product?.name}</p>
+                <p>Quantity: {orderDetails.quantity}</p>
+                <p>Price per item: ${orderDetails.price}</p>
+                <p>Subtotal: ${(orderDetails.quantity * parseFloat(orderDetails.price)).toFixed(2)}</p>
               </div>
-        </div>
+            </div>
           )}
-      </div>
-     );
- };
+        </div>
+      ))}
+    </div>
+  );
+};
 
 export default OrdersPage;
