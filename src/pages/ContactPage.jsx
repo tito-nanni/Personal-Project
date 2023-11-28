@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { Link } from "react-router-dom";
 import './ContactPage.css'
 
 const ContactPage = () => {
@@ -25,7 +26,9 @@ const ContactPage = () => {
     if (isSubmitted) {
         return <div className="thank-you-message">
             <h1>Thank you!</h1>
-            <p>Your message has been sent.</p></div>
+            <p>Your message has been sent.</p>
+            <Link to="/" className="exit">Back to Homepage</Link>
+            </div>
     }
 
     return (
