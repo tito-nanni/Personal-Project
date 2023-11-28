@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import './ContactPage.css'
 
 const ContactPage = () => {
     const [formData, setFormData] = useState({
@@ -22,13 +23,15 @@ const ContactPage = () => {
     };
 
     if (isSubmitted) {
-        return <div><h1>Thank you!</h1><p>Your message has been sent.</p></div>
+        return <div className="thank-you-message">
+            <h1>Thank you!</h1>
+            <p>Your message has been sent.</p></div>
     }
 
     return (
-        <div>
+        <div className="contact-container">
             <h1>Contact Us</h1>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="contact-form">
                 <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} />
                 <input type="email" name="email" placeholder="Your Email" value={formData.email} onChange={handleChange} />
                 <input type="text" name="subject" placeholder="Subject" value={formData.subject} onChange={handleChange} />
