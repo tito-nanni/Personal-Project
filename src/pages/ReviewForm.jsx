@@ -61,7 +61,7 @@ const ReviewForm = ({ productId, onNewReview }) => {
                     value={reviewData.rating}
                     onChange={handleInputChange}
                     >
-                        <option value="">Choose a rating</option>
+                        <option value="">Select a Rating</option>
                         <option value="1">1-Terrible</option>
                         <option value="2">2-Bad</option>
                         <option value="3">3-Okay</option>

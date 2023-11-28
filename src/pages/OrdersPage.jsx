@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './OrdersPage.css'
 
 const OrdersPage = () => {
   const [orders, setOrders] = useState([]);
@@ -38,13 +39,13 @@ const OrdersPage = () => {
 
 
   return (
-    <div>
+    <div className="orders-container">
     <h1>Your Orders</h1>
     {orders.map(order => (
-      <div key={order.order_id}>
+      <div key={order.order_id} className="order-item">
         <h2>Order {order.order_id}</h2>
         <p>Order Date: {new Date(order.order_date).toLocaleDateString()}</p>
-        <button onClick={() => handleViewDetails(order.order_id)}>
+        <button onClick={() => handleViewDetails(order.order_id)} className="order-button">
           {selectedOrder === order.order_id ? 'Hide Details' : 'View Details'}
         </button>
       </div>
@@ -52,7 +53,7 @@ const OrdersPage = () => {
 
 
       {selectedOrder && orderDetails && (
-        <div>
+        <div className="order-details">
           <h2>Order Details</h2>
             <div key={orderDetails.order_detail_id}>
               <p>Product: {orderDetails.Product?.name}</p>
