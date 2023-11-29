@@ -24,7 +24,7 @@
   }
   
   .cart-item-image {
-    width: 80px; /* Adjust as needed */
+    width: 80px;
     height: auto;
     margin-right: 20px;
   }
@@ -88,6 +88,7 @@
   }
   
   .cart-item-remove:hover {
+    transition: background-color 0.3s;
     background: #ff0000;
   }
   
@@ -109,6 +110,7 @@
     cursor: pointer;
     border: none;
     border-radius: 5px;
+    transition: background-color 0.3s
   }
   
   .checkout-button:hover {

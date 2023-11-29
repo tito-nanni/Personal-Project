@@ -50,7 +50,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0);
+    transform: translate(150%, 150%) scale(0);
     color: black;
     font-size: 34px;
     opacity: 0;

@@ -10,7 +10,7 @@ const Product = ({ product }) => {
     const handleAddToCart = () => {
         dispatch(addToCart(product));
         setButtonClicked(true);
-        setTimeout(() => setButtonClicked(false), 900); //reset after animation
+        setTimeout(() => setButtonClicked(false), 700); //reset after animation
     }
     return (
         <div className="product">

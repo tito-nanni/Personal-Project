@@ -20,7 +20,7 @@ const Footer = ({ setIsAuthenticated }) => {
   return (
     <footer className="footer">
       <Navigation setIsAuthenticated={setIsAuthenticated} />
-      <button onClick={handleLogout}>Log Out</button>
+      <button onClick={handleLogout} className="logout">Log Out</button>
       <p>&copy; {(new Date()).getFullYear()} Eagles Store</p>
     </footer>
   );
