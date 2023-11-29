@@ -10,8 +10,9 @@ const Product = ({ product }) => {
     const handleAddToCart = () => {
         dispatch(addToCart(product));
         setButtonClicked(true);
-        setTimeout(() => setButtonClicked(false), 700); //reset after animation
+        setTimeout(() => setButtonClicked(false), 1000); //reset after animation
     }
+
     return (
         <div className="product">
           <img style={{ width: '11rem' }} src={product.image_url} alt={product.name} />
@@ -19,6 +20,7 @@ const Product = ({ product }) => {
           <p>{product.description}</p>
           <p>${product.price}</p>
           <button onClick={handleAddToCart} className={buttonClicked ? 'button-clicked' : ''}>
+            <i className="fas fa-shopping-cart cart-icon"></i>
             Add to Cart
             <span className="plus-sign">+</span>
           </button>
