@@ -50,10 +50,27 @@
   
   .quantity-controls button {
     background: none;
-    border: 1px solid #333;
+    border: 2px solid #333;
     padding: 5px 10px;
     margin: 0 5px;
   }
+
+  .quantity-controls button:first-child {
+    transition: background-color 0.3s;
+  }
+
+  .quantity-controls button:first-child:hover {
+    background-color: red;
+  }
+
+  .quantity-controls button:last-child {
+    transition: background-color 0.3s;
+  }
+
+  .quantity-controls button:last-child:hover {
+    background-color:#4CBB17;
+  }
+  
   
   .quantity-controls span {
     min-width: 30px;
@@ -64,8 +81,9 @@
     background: #014A53;
     color: white;
     border: none;
-    padding: 5px 10px;
-    margin-left: 10px;
+    padding: 5px 15px;
+    margin-top: 10px;
+    margin-right: 10px;
     cursor: pointer;
   }
   

@@ -15,11 +15,13 @@
   }
   
   .product h3 {
+    color:black;
     margin: 10px 0;
   }
   
   .product p {
-    color: #666;
+    color: #014A53;
+    font-weight: bold;
     font-size: 14px;
   }
   
@@ -34,5 +36,30 @@
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 4px;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .product button:hover {
+    background-color: #4cbb17;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2)
+  }
+
+  .plus-sign {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    color: black;
+    font-size: 34px;
+    opacity: 0;
+    transition: transform 0.5s, opacity 0.5s;
+  }
+
+  .button-clicked .plus-sign {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 2;
+    transition: transform 0.5s, opacity 0.5s;
   }
   
