@@ -2,14 +2,14 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--primary-color); /* Use a variable or specific color */
+    background-color: var(--primary-color); 
     padding: 10px 20px;
   }
   
   nav a {
     color: #014A53;
     text-decoration: none;
-    margin-right: 100px;
+    margin-right: 90px;
     font-size: 50px;
     transition: color 0.3s, transform 0.3s, text-shadow 0.3s;
   }

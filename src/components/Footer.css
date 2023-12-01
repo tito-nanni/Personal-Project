@@ -7,9 +7,9 @@
     padding: 0.1rem;
     background-color: #fff;
     text-align: right;
-    font-size: 1rem;
+    font-size: 0.1rem;
     border-top: 2px solid #eaeaea;
-    z-index: 1000;
+    z-index: 1000px;
   }
   
   body {
